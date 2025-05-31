@@ -1,8 +1,13 @@
 [project]
 authors = []
 license = { text = "MIT" }
-requires-python = ">=3.9"
-dependencies = []
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "langchain-huggingface>=0.2.0",
+    "polars>=1.30.0",
+    "pysqlite3-binary>=0.5.4",
+    "python-dotenv>=1.0.1",
+]
 name = "langchain-monorepo"
 version = "0.0.1"
 description = "LangChain mono-repo"
@@ -68,6 +73,8 @@ langchain-mistralai = { path = "./libs/partners/mistralai", editable = true }
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+[tool.poetry]
+package-mode = false
 
 [tool.codespell]
 skip = '.git,*.pdf,*.svg,*.pdf,*.yaml,*.ipynb,poetry.lock,*.min.js,*.css,package-lock.json,example_data,_dist,examples,templates,*.trig'
